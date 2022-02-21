@@ -57,6 +57,7 @@ Request body:
 
 RESPONSE STATUS -> HTTP 201 (created)
 {
+"id":1,
 "serie":"Friends",
 "seasons":10,
 "released_date":"06/02/1996",
@@ -69,12 +70,39 @@ Esta rota retorna todos os seriados cadastrados.
 
 RESPONSE STATUS -> HTTP 200 (ok)
 [{
+"id":1,
 "serie":"Friends",
 "seasons":10,
 "released_date":"06/02/1996",
 "genre":"Comédia, romance",
 "imdb_rating":8.8
 }]
+
+PATCH /seriado/serie_id
+Esta rota é para atualizar qualquer dado da serie.
+
+Request body:
+{
+"serie":"Friends",
+"seasons":10,
+"released_date":"06/02/1996",
+"genre":"Comédia, romance",
+"imdb_rating":8.8
+}
+
+RESPONSE STATUS -> HTTP 200 (ok)
+{
+"id":1,
+"serie":"Friends",
+"seasons":10,
+"released_date":"06/02/1996",
+"genre":"Comédia, romance",
+"imdb_rating":8.8
+}
+
+DELETE /seriado/seriad_id
+Esta rota deleta um seriado cadastrado.
+RESPONSE STATUS -> HTTP 204 (ok)
 
 Tecnologias utilizadas:
 Django
