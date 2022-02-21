@@ -6,7 +6,7 @@ from datetime import datetime, date
 bp_series = Blueprint('bp_series', __name__)
 
 
-@bp_series.get('/')
+@bp_series.get('/seriado')
 def get_all():
  
     series = SerieModel.query.all()
@@ -14,7 +14,7 @@ def get_all():
     
     return jsonify(series),200
 
-@bp_series.post('/')
+@bp_series.post('/seriado')
 def create():
     serie = request.get_json()
 
